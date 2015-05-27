@@ -20,7 +20,11 @@ fi
 #clone
 for dep in midgard baldr sif mjolnir loki odin thor; do
 	rm -rf $dep
-	git clone --depth=1 --recurse-submodules --single-branch --branch=master https://github.com/valhalla/$dep.git $dep
+        if [ $dep == "mjolnir" ]; then
+		git clone --depth=1 --recurse-submodules --single-branch --branch=kk_ops https://github.com/valhalla/$dep.git $dep
+	else
+		git clone --depth=1 --recurse-submodules --single-branch --branch=master https://github.com/valhalla/$dep.git $dep
+	fi
 done
 
 #build sync
