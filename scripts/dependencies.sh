@@ -9,7 +9,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 90
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
 
 #circle really needs to get ubuntu 14+
-wget -O - http://m.m.i24.cc/osmconvert.c | sudo cc -x c - -lz -O3 -o /usr/local/bin/osmconvert
+sudo bash -c "wget -O - http://m.m.i24.cc/osmconvert.c | cc -x c - -lz -O3 -o /usr/local/bin/osmconvert"
 
 #install the service deps in the background
 $DIR/install_service_deps.sh "$1" &
